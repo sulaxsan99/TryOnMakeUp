@@ -65,6 +65,7 @@ try {
 })
 router.put('/update/:id',async(req,res)=>{
   try {
+    console.log(req.body)
     const oneproduct = await productSchema.findById(req.params.id)
     if (!oneproduct) { 
         return res.status(400).json("Product not found");
@@ -81,6 +82,7 @@ router.put('/update/:id',async(req,res)=>{
     console.log(error)
   }
 })
+
 
 
 router.get('/singlePro/:id',async(req,res)=>{

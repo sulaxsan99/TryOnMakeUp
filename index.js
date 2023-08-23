@@ -7,7 +7,11 @@ const userRoute = require('./routes/User')
 const productRoute= require('./routes/Product')
 const cors = require('cors')
 app.use(express.json())
-app.use(cors())
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true // Allow credentials
+}))
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('dotenv').config()
